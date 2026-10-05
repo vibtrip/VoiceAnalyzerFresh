@@ -1,27 +1,39 @@
 {
   "expo": {
-    "name": "VoiceAnalyzerFresh",
-    "slug": "VoiceAnalyzerFresh",
+    "name": "VoiceAnalyzer",
+    "slug": "voice-analyzer",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "newArchEnabled": true,
+    "userInterfaceStyle": "dark",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#0D0D1A"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.voiceanalyzer.app",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "VoiceAnalyzer needs microphone access to analyze your voice and provide personalized recommendations."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#0D0D1A"
       },
-      "edgeToEdgeEnabled": true
+      "package": "com.voiceanalyzer.app",
+      "permissions": ["RECORD_AUDIO"]
     },
+    "plugins": [
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Allow VoiceAnalyzer to access your microphone."
+        }
+      ]
+    ],
     "web": {
       "favicon": "./assets/favicon.png"
     }
